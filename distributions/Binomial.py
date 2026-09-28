@@ -1,6 +1,6 @@
 import math
 
-class BinomialDistribution:
+class Binomial:
     """
         Distribution: P(X = k) = (n choose k) * p^k * (1 - p)^(n - k)
 
@@ -21,7 +21,10 @@ class BinomialDistribution:
             private:
     """
 
-    def __init__(self, n: int, k: int, p: float):
+    def __init__(self,
+                 n: int,
+                 k: int,
+                 p: float):
         self.n = n
         self.k = k
         self.p = p
@@ -39,7 +42,10 @@ class BinomialDistribution:
 
         return coeff * pow(self.p, self.k) * pow(q, (self.n - self.k))
 
-    def coeff(self, n: int = None, k: int = None) -> int:
+    def coeff(self,
+              n: int = None,
+              k: int = None
+              )-> int:
         """
             function to calculate Binomial Coefficient
         :param n: number of elements
@@ -51,9 +57,12 @@ class BinomialDistribution:
 
         return math.factorial(n) / (math.factorial(n - k) * math.factorial(k))
 
-    def mean(self, n: int = None, p: float = None) -> float:
+    def mean(self,
+             n: int = None,
+             p: float = None
+             ) -> float:
         """
-            Calculates mean of binomial distribution
+            Calculates mean of distributions distribution
             μ = n * p
 
         :param n: number of trials
@@ -65,9 +74,12 @@ class BinomialDistribution:
 
         return n * p
 
-    def std(self, n: int = None, p: float = None) -> float:
+    def std(self,
+            n: int = None,
+            p: float = None
+            ) -> float:
         """
-            Calculates standard deviation of binomial distribution
+            Calculates standard deviation of distributions distribution
             σ = √(n * p * (1 - p))
 
         :param n: number of trials
